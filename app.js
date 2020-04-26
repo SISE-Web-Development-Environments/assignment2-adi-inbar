@@ -7,10 +7,20 @@ var start_time;
 var time_elapsed;
 var interval;
 
+localStorage.setItem("users",JSON.stringify({p:{password:"P"}}));
+
+
+
 $(document).ready(function() {
 	context = canvas.getContext("2d");
-	Start();
+	open();
 });
+
+function open(){
+	$("#alert_login").hide();
+	$("#login_div").hide();
+	$("#game_div").hide();
+}
 
 function Start() {
 	board = new Array();
@@ -170,3 +180,60 @@ function UpdatePosition() {
 		Draw();
 	}
 }
+
+//<!--for ragistration and login-->
+function onSubmitFunc() {
+	var validation_holder;
+	console.log("asd");
+	var username = $("#cname").val();
+	var userPassword = $("#password").val();
+	var usersObj = JSON.parse(localStorage.getItem("users"));
+	if(usersObj[username]==undefined){
+		usersObj[username] = {password:userPassword};
+		localStorage.setItem("users",JSON.stringify(usersObj));
+		$("#ragistration_div").hide()
+		$("#login_div").show();
+	}
+	else{
+		showAlert_ragistration();	
+	}	
+	return false;
+
+}; // jQuery End
+
+function onLoginFunc(){
+
+	var loginName = $("#cnameLog").val();
+	var loginPass = $("#passwordLog").val();
+	var users = JSON.parse(localStorage.getItem("users"));
+	if(users[loginName]==undefined){
+		console.log("no user")
+		showAlert_login();
+		return false;
+	}
+	if(users[loginName].password!=loginPass){
+		console.log("no")
+		showAlert_login();
+		return false;
+	}
+	$("#login_div").hide();
+	$("#game_div").show();
+	$("#game_div").children().show();
+	
+}
+
+function showAlert_ragistration(){
+	$("#alert_ragistration").show(1000);
+}
+
+function showAlert_login(){
+	$("#alert_login").show(1000);
+
+}
+
+
+
+
+
+
+
