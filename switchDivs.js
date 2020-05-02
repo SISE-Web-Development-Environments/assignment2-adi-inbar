@@ -242,6 +242,8 @@ function goToGame() {
     }
 function fillSettingBoard() {
     //user_name_settings.innerText = sessionStorage.getItem("currentUser");
+    // document.getElementById('userName').innerText =   document.getElementById('name').innerText;
+
     document.getElementById('game_time_id').innerText = game_time;
     document.getElementById('lblLives').innerText = curr_lives;
     document.getElementById('balls_number_id').innerText = food_remain; 
