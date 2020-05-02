@@ -1,0 +1,416 @@
+/*adi from here */
+form {border: 3px solid #f1f1f1; padding: 15px}
+
+.Header {
+    overflow: hidden;
+  background-color: #F1F1F1;
+  text-align: center;
+  position: fixed;
+  padding : 20px;
+  }
+  body, html {
+    height: 100%;
+    /* background-image: url("im2.jpg"); */
+    background-color: white;
+  }
+  #welcome{
+    height: 100%;
+    position: relative;
+  /* Center the background image */
+  background-position: center;
+  /* Scale and zoom in the image */
+  background-size: contain;
+  /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
+  color: white;
+  bottom: 5px;
+  }
+  
+  body{
+    min-height: 100%;
+  
+  }
+  #Main{
+    height: 100%;
+    width: 100%;
+  }
+  b{
+    width: 100%;
+	text-align: center;
+	color: white;
+	font-size: 80px;
+	font-family: Bradley Hand, cursive;
+    font-weight: lighter;
+    left: 300px;
+    top: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .header-container{
+    font-family: "Lobster", serif;
+    font-size: 40px;
+    
+    line-height: 1.5;
+    text-align:center;
+    /* background-image: url("im2.jpg");  */
+  }
+ 
+  .register_btn {
+    background-color: rgb(224, 72, 98);
+    border-radius: 18px;
+    border: 2px solid #ffffff;
+    color: white;
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: blanchedalmond;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    left: 450px;
+    top: 230px;
+  }
+  .login_btn {
+    background-color: rgb(224, 72, 98);
+    border-radius: 18px;
+    border: 2px solid #ffffff;
+    color: white;
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: blanchedalmond;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    left: 650px;
+    top: 230px;
+  }
+  .game_btn{
+    background-color: teal;
+    border: none;
+    font-weight: bold;
+    color:black;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: blanchedalmond;
+    display: block;
+    font-family:  "Courier New", Courier, monospace;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    /* right: 3em; */
+    top: 300px;
+    border: 2px solid white;
+    border-radius: 10px;
+  
+  }
+  #mute_btn{
+    top: 280px;
+    height: 70px;
+    width:70px;
+    right: 2em;
+    background-image : url(mute.png);
+    background-repeat:no-repeat;
+  }
+  #reset_btn{
+    top: 370px;
+  }
+
+ #menu 
+ /* - not good */
+{
+	 width: 100%;
+	/*height: 35px; */
+}
+.menu {
+  /* background-color: black; */
+  background-image: url("im2.jpg");
+  font-family: "Courier New", Courier, monospace;
+  overflow: auto;
+  text-align: center;
+  white-space: nowrap;
+  width: 50%;
+  /* margin-top: 13.8em; */
+  margin-bottom: 0em;
+}
+ 
+.menu a {
+	display: inline-block;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+	text-align: center;
+	padding: 20px;
+  /* text-decoration:cornflowerblue; */
+  /* top: 100px; */
+  /* position: fixed; */
+}
+
+.menu a:hover {
+  background-color: rgba(245, 240, 240, 0.788);
+}
+
+.column {
+    float: left;
+  }
+  .column right{
+    height: 100%;
+  }
+  
+  /* Left and right column */
+  .column.side {
+    width: 0%;
+  }
+  
+  /* Middle column */
+  .column.middle {
+    width: 20%;
+    margin: 0.5em; 
+    background-color: rgb(159, 243, 235);
+    /* font-family:Verdana, Geneva, Tahoma, sans-serif ; */
+    font-family: "Courier New", Courier, monospace;
+    font-size: 18px;
+  }
+  .column_right{
+    /* background-color: rgb(159, 243, 235); */
+    font-family: "Courier New", Courier, monospace;
+    font-size: 18px;
+    color: black;
+    margin: 0.5em; 
+    width:15%;
+    position: absolute;
+    right: 0px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  /* @media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+      width: 100%;
+      background-color: black;
+    }
+  } */
+
+  .label {
+    color: black;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* #score{
+    top: 10px;
+    text-align: center;
+  } */
+  /** not used **/
+  .center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+
+  #canvas{
+    /* background-color: rgb(208, 214, 198); */
+    text-align: right;
+    position: relative;
+    width: 40%;
+    height:40%;
+    border: 1px solid black;
+    left: 10em;
+    bottom: 1em;
+  }
+
+  .footer {
+    line-height: 1em;
+    position: fixed;
+    margin: 0 auto;
+    padding: 1px 0 1px 0;
+    clear: both;
+    overflow: hidden;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: url(im2.jpg)repeat;
+    color: white;
+    text-align: left;
+    text-indent: 1%;
+    font-size: 14px;
+    font-family: 'source_sans_proregular', Arial, Helvetica, sans-serif;
+}
+#footerright {
+    float: right;
+    text-align: center;
+
+}
+#footerleft {
+    float: left;
+    list-style: none;
+    position: relative;
+    width: 440px;
+    text-indent: 2%;
+}
+
+  /*ADI .footer{
+    margin-top: -200px;
+    height: 55px;
+    background-color: rgb(241, 241, 111);
+    color: white;
+    clear: both;
+    left: 0;
+    color: white;
+    text-indent: 1%;
+    position: fixed;
+    width: 100%;
+    float: right;
+    margin: 0 auto;
+    bottom: 0;
+    overflow: hidden;
+    padding: 5px 0 5px 0;
+    font-size: 14px;
+    font-family: 'source_sans_proregular', Arial, Helvetica, sans-serif;
+ } */
+ .show_settings {
+   display: inline;
+  font-size: 12px;
+}
+#settings {
+  padding-top: 50px;
+}
+
+/* Modal */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  text-align: center;
+  left: 30px;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  
+  /*adi untill here */
+
+  /*inbar from here */
+  p { 
+    padding:2px 
+  }
+  
+  
+  
+  /*ragistration_div */
+  /* #ragistration_div { 
+    width:820px; 
+    padding:20px; 
+    margin:20px auto;
+    background:#fff;
+  }
+  
+  #login_div{
+    width:820px; 
+    padding:20px; 
+    margin:20px auto;
+    background:#fff;
+  } */
+  
+  
+  div#wrap2 {
+      border: 1px solid #CCCCCC;
+      margin-bottom: 10px;
+      padding:15px;
+  }
+  h2.free_account {
+      color: #3399FF;
+      display: block;
+      margin-bottom: 20px;
+      position: relative;
+  }
+  form#register_form label { 
+    display:inline-block; /* with block na */
+    width:125px;
+    font-weight:bold;
+  }
+  form#register_form label:after { 
+    content:":"
+  }
+  form#register_form input[type='text'], input[type='password'] { 
+    display:inline-block; /* with block na */
+    width:200px;
+    border:1px solid #ccc;
+    margin:0;
+    padding:5px;
+  }
+  form#register_form select {
+      border: 1px solid #CCCCCC;
+      display: inline-block;
+      margin: 0;
+      padding: 5px 0;
+      width: 68px;
+  }
+  form#register_form input[name='submit'] { 
+    border:1px solid #3399FF;
+    background:#3399FF;
+    border-radius: 5px;
+    margin:10px;
+    color:#FFF;
+    padding:5px;
+    font-weight:bold
+  }
+  form#register_form input[name='submit'] { 
+    cursor:pointer;
+  }
+  p.validate_msg {
+      border: 1px solid #FF0000;
+      font-weight: bold;
+      padding: 10px;
+    display:none;
+    margin-bottom:25px
+  }
+  span.validate  {
+    color:#F00;
+    padding-left:8px;
+    font-style:italic;
+  }
+  /*ragistration_div_end */
+
+
+ 
