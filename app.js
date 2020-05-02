@@ -13,11 +13,8 @@ var interval;
 localStorage.setItem("users",JSON.stringify({p:{password:"P"}}));
 
 
-
 $(document).ready(function() {
 	context = canvas.getContext("2d");
-<<<<<<< HEAD
-	$("#Main").hide();
 	$("#login_div").hide();
 	$("#ragistration_div").hide();
 	$("#alert_ragistration").hide();
@@ -28,20 +25,6 @@ $(document).ready(function() {
 /*updte fun and change to Start*/
 // function start() {
 // 	board = new Array();
-// 	score = 0;
-// 	pac_color = "yellow";
-// 	var cnt = 100;
-// 	var food_remain = 50;
-// 	var pacman_remain = 1;
-// 	start_time = new Date();
-// 	for (var i = 0; i < 10; i++) {
-// 		board[i] = new Array();
-// 		//put obstacles in (i=3,j=3) and (i=3,j=4) and (i=3,j=5), (i=6,j=1) and (i=6,j=2)
-// 		for (var j = 0; j < 10; j++) {
-// 			if (
-// 				(i == 3 && j == 3) ||
-// 				(i == 3 && j == 4) ||
-// 				(i == 3 && j == 5) ||
 // 				(i == 6 && j == 1) ||
 // 				(i == 6 && j == 2)
 // 			) {
@@ -85,15 +68,10 @@ $(document).ready(function() {
 // 	);
 // 	interval = setInterval(UpdatePosition, 250);
 // }
-=======
-	open();
-});
 
-function open(){
-	$("#alert_login").hide();
-	$("#login_div").hide();
-	$("#game_div").hide();
-}
+// });
+
+
 
 function Start() {
 	board = new Array();
@@ -154,7 +132,7 @@ function Start() {
 	);
 	interval = setInterval(UpdatePosition, 250);
 }
->>>>>>> d1bd1adccdf1411991a35af87cc556bd6426ba0e
+
 
 function findRandomEmptyCell(board) {
 	var i = Math.floor(Math.random() * 9 + 1);
@@ -166,20 +144,20 @@ function findRandomEmptyCell(board) {
 	return [i, j];
 }
 
-function GetKeyPressed() {
-	if (keysDown[38]) {
-		return 1;
-	}
-	if (keysDown[40]) {
-		return 2;
-	}
-	if (keysDown[37]) {
-		return 3;
-	}
-	if (keysDown[39]) {
-		return 4;
-	}
-}
+// function GetKeyPressed() {
+// 	if (keysDown[38]) {
+// 		return 1;
+// 	}
+// 	if (keysDown[40]) {
+// 		return 2;
+// 	}
+// 	if (keysDown[37]) {
+// 		return 3;
+// 	}
+// 	if (keysDown[39]) {
+// 		return 4;
+// 	}
+// }
 
 function Draw() {
 	canvas.width = canvas.width; //clean board
@@ -290,9 +268,7 @@ function UpdatePosition() {
 	// 	Draw();
 	// }
 }
-<<<<<<< HEAD
 // adi::
-=======
 
 //<!--for ragistration and login-->
 function onSubmitFunc() {
@@ -350,4 +326,3 @@ function showAlert_login(){
 
 
 
->>>>>>> d1bd1adccdf1411991a35af87cc556bd6426ba0e
