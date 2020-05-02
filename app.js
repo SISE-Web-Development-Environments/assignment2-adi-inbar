@@ -15,6 +15,7 @@ localStorage.setItem("users",JSON.stringify({p:{password:"P"}}));
 
 $(document).ready(function() {
 	context = canvas.getContext("2d");
+	$("#Main").hide();
 	$("#login_div").hide();
 	$("#ragistration_div").hide();
 	$("#alert_ragistration").hide();
