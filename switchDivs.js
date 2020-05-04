@@ -29,10 +29,16 @@ var game_over = false;
 var gameRunnig = false;
 var game_sound;
 var sound_on = false;
+var loss_sound;
+var muteAudio_on = false;
 
 
 
 function switchDivs(newDiv) {
+    if(newDiv == "Main" && !loged_in){
+        alert("you need to login before start playing");
+        return;
+    }
     var item = localStorage.getItem("current");
     if (newDiv != item) {
         let toRemove = document.getElementById(item);
@@ -221,6 +227,7 @@ function muteAudio() {
         game_sound.stop();
         $("#mute_btn").css("background-image","url(mute.png)");
         }
+    muteAudio_on = true;
 }
 
 function openModal( model_name){
