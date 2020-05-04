@@ -18,6 +18,7 @@ var numBalls_25_point ;
 var LOST = false;
 var cell=new Array();
 var count_interval =0;
+var user_name = "p"; 
 
 var no_pill=true;
 var no_time=true;
@@ -403,6 +404,7 @@ function onSubmitFunc() {
 		usersObj[username] = {password:userPassword};
 		localStorage.setItem("users",JSON.stringify(usersObj));
 		switchDivs("login_div");
+		user_name = username;
 	}
 	return false;
 }; // jQuery End

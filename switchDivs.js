@@ -180,6 +180,9 @@ function fillSettingBoard() {
     document.getElementById('right_arrow_id').innerText =KeyBoardValues.right;
     document.getElementById('down_arrow_id').innerText =KeyBoardValues.down;
     document.getElementById('up_arrow_id').innerText =KeyBoardValues.up;
+
+    //inbar add
+    document.getElementById('lbUserName').innerText = user_name;
    
     //five_points_id.style.color = fiveColor;
     //ten_points_id.style.color = tenColor;

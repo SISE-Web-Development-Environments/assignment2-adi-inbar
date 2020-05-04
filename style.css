@@ -13,7 +13,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   body, html {
     height: 100%;
   /*  background-image: url("im2.jpg"); */
-    background-color: black;
+    background-color: white;
   }
 
 
@@ -75,9 +75,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     cursor: pointer;
     position: absolute;
     left: 600px;
-    top: 230px;
-    position: fixed;
-   
+    top: 230px;   
   }
   .login_btn {
     background-color: rgb(224, 72, 98);
@@ -94,12 +92,11 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     position: absolute;
     left: 800px;
     top: 230px;
-    position: fixed;
   }
 
 
   .game_btn{
-    background-color: teal;
+    /* background-color: teal;
     border: none;
     font-weight: bold;
     color:black;
@@ -112,11 +109,22 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     margin: 4px 2px;
     cursor: pointer;
     position: absolute;
-    /* right: 3em; */
     top: 300px;
     border: 2px solid white;
-    border-radius: 10px;
+    border-radius: 10px; */
+    border:1px solid white;
+    background:rgb(224, 72, 98);
+    font-size: large;
+    border-radius: 5px;
+    margin:10px;
+    color:#FFF;
+    padding:10px;
+    font-weight:bold;
+    font-family:"Lobster", serif;
+
   }
+
+
   #mute_btn{
     top: 280px;
     height: 70px;
@@ -318,7 +326,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 
   .p_footer{
     padding:2px ;
-    color: white;
+    color: black;
     font-size: x-large;
   }
 
@@ -409,7 +417,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 
 
   #settingForm label{
-    color: white;
+    color: black;
     font-family:"Lobster", serif;
     font-size: x-large;
   }
@@ -431,7 +439,5 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     font-size: medium;
   }
 
-  #login_div p { 
-    color: white;
-  }
+ 
 
