@@ -1,29 +1,33 @@
-<<<<<<< HEAD
 /*adi from here */
 form {border: 3px solid #f1f1f1; padding: 15px}
 
+
 .Header {
-    overflow: hidden;
+  overflow: hidden;
   background-color: #F1F1F1;
   text-align: center;
   position: fixed;
   padding : 20px;
   }
+
   body, html {
     height: 100%;
-    /* background-image: url("im2.jpg"); */
-    background-color: white;
+  /*  background-image: url("im2.jpg"); */
+    background-color: black;
   }
+
+
   #welcome{
     height: 100%;
     position: relative;
   /* Center the background image */
-  background-position: center;
+    background-position: center;
   /* Scale and zoom in the image */
-  background-size: contain;
+    background-size: contain;
   /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
-  color: white;
-  bottom: 5px;
+    color: white;
+    bottom: 5px;
+    text-align: center;
   }
   
   body{
@@ -36,10 +40,10 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   }
   b{
     width: 100%;
-	text-align: center;
-	color: white;
-	font-size: 80px;
-	font-family: Bradley Hand, cursive;
+	  text-align: center;
+	  color: white;
+	  font-size: 80px;
+	  font-family: Bradley Hand, cursive;
     font-weight: lighter;
     left: 300px;
     top: 100px;
@@ -70,8 +74,10 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     margin: 4px 2px;
     cursor: pointer;
     position: absolute;
-    left: 450px;
+    left: 600px;
     top: 230px;
+    position: fixed;
+   
   }
   .login_btn {
     background-color: rgb(224, 72, 98);
@@ -86,9 +92,12 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     margin: 4px 2px;
     cursor: pointer;
     position: absolute;
-    left: 650px;
+    left: 800px;
     top: 230px;
+    position: fixed;
   }
+
+
   .game_btn{
     background-color: teal;
     border: none;
@@ -107,7 +116,6 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     top: 300px;
     border: 2px solid white;
     border-radius: 10px;
-  
   }
   #mute_btn{
     top: 280px;
@@ -141,11 +149,12 @@ form {border: 3px solid #f1f1f1; padding: 15px}
  
 .menu a {
 	display: inline-block;
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 20px;
 	text-align: center;
-	padding: 20px;
+  padding: 20px;
+  font-family: "Lobster", serif;
   /* text-decoration:cornflowerblue; */
   /* top: 100px; */
   /* position: fixed; */
@@ -157,10 +166,10 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 
 .column {
     float: left;
-  }
-  .column right{
+}
+.column right{
     height: 100%;
-  }
+}
   
   /* Left and right column */
   .column.side {
@@ -177,10 +186,10 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     font-size: 18px;
   }
   .column_right{
-    /* background-color: rgb(159, 243, 235); */
+    background-color: rgb(159, 243, 235); 
     font-family: "Courier New", Courier, monospace;
     font-size: 18px;
-    color: black;
+    color: white;
     margin: 0.5em; 
     width:15%;
     position: absolute;
@@ -189,21 +198,14 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     text-align: center;
   }
   
-
-  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-  /* @media screen and (max-width: 600px) {
-    .column.side, .column.middle {
-      width: 100%;
-      background-color: black;
-    }
-  } */
-
   .label {
     color: black;
     padding: 10px;
     align-items: center;
     text-align: center;
   }
+
+  
 
   /* #score{
     top: 10px;
@@ -240,15 +242,17 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     bottom: 0;
     width: 100%;
     background: url(im2.jpg)repeat;
-    color: white;
+    color: black;
+    font-family: "Lobster", serif;
     text-align: left;
     text-indent: 1%;
     font-size: 14px;
-    font-family: 'source_sans_proregular', Arial, Helvetica, sans-serif;
+    /*font-family: 'source_sans_proregular', Arial, Helvetica, sans-serif;*/
 }
 #footerright {
     float: right;
     text-align: center;
+    right: auto;
 
 }
 #footerleft {
@@ -259,25 +263,6 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     text-indent: 2%;
 }
 
-  /*ADI .footer{
-    margin-top: -200px;
-    height: 55px;
-    background-color: rgb(241, 241, 111);
-    color: white;
-    clear: both;
-    left: 0;
-    color: white;
-    text-indent: 1%;
-    position: fixed;
-    width: 100%;
-    float: right;
-    margin: 0 auto;
-    bottom: 0;
-    overflow: hidden;
-    padding: 5px 0 5px 0;
-    font-size: 14px;
-    font-family: 'source_sans_proregular', Arial, Helvetica, sans-serif;
- } */
  .show_settings {
    display: inline;
   font-size: 12px;
@@ -328,14 +313,24 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   cursor: pointer;
 }
 
-  
   /*adi untill here */
+
+
+  .p_footer{
+    padding:2px ;
+    color: white;
+    font-size: x-large;
+  }
 
   /*inbar from here */
   p { 
-    padding:2px 
+    padding:2px ;
+    color: black;
+    font-size: x-large;
   }
-  
+  #date{
+    color: gray;
+  }
   
   
   /*ragistration_div */
@@ -353,22 +348,29 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     background:#fff;
   } */
   
-  
   div#wrap2 {
-      border: 1px solid #CCCCCC;
+      border: 1px solid black;
       margin-bottom: 10px;
       padding:15px;
+      margin: auto;
+      width: 30%;
+      height: auto;
+      
   }
+
   h2.free_account {
-      color: #3399FF;
+      font-family: "Lobster", serif;
+      color: rgb(224, 72, 98);
       display: block;
       margin-bottom: 20px;
       position: relative;
+    
   }
   form#register_form label { 
     display:inline-block; /* with block na */
     width:125px;
     font-weight:bold;
+    font-family:"Lobster", serif;
   }
   form#register_form label:after { 
     content:":"
@@ -387,118 +389,49 @@ form {border: 3px solid #f1f1f1; padding: 15px}
       padding: 5px 0;
       width: 68px;
   }
+  
   form#register_form input[name='submit'] { 
-    border:1px solid #3399FF;
-    background:#3399FF;
+    border:1px solid white;
+    background:rgb(224, 72, 98);
+    font-size: large;
     border-radius: 5px;
     margin:10px;
     color:#FFF;
-    padding:5px;
-    font-weight:bold
+    padding:10px;
+    font-weight:bold;
+    font-family:"Lobster", serif;
   }
   form#register_form input[name='submit'] { 
     cursor:pointer;
   }
-  p.validate_msg {
-      border: 1px solid #FF0000;
-      font-weight: bold;
-      padding: 10px;
-    display:none;
-    margin-bottom:25px
-  }
-  span.validate  {
-    color:#F00;
-    padding-left:8px;
-    font-style:italic;
-  }
+  
   /*ragistration_div_end */
 
 
+  #settingForm label{
+    color: white;
+    font-family:"Lobster", serif;
+    font-size: x-large;
+  }
+
+  #settingForm button{
+    border:1px solid white;
+    background:rgb(224, 72, 98);
+    font-size: large;
+    border-radius: 5px;
+    margin:10px;
+    color:#FFF;
+    padding:10px;
+    font-weight:bold;
+    font-family:"Lobster", serif;
+  }
  
-=======
-body { 
-	font-family: sans-serif;
-	font-size:13px;
-	background:#CCCCCC;
-	color:#444444;
-}
-p { 
-	padding:2px 
-}
+  #register_form input{
+    color: black;
+    font-size: medium;
+  }
 
+  #login_div p { 
+    color: white;
+  }
 
-
-/*ragistration_div */
-#ragistration_div { 
-	width:820px; 
-	padding:20px; 
-	margin:20px auto;
-	background:#fff;
-}
-
-#login_div{
-	width:820px; 
-	padding:20px; 
-	margin:20px auto;
-	background:#fff;
-}
-
-
-div#wrap2 {
-    border: 1px solid #CCCCCC;
-    margin-bottom: 10px;
-    padding:15px;
-}
-h2.free_account {
-    color: #3399FF;
-    display: block;
-    margin-bottom: 25px;
-}
-form#register_form label { 
-	display:inline-block; /* with block na */
-	width:125px;
-	font-weight:bold;
-}
-form#register_form label:after { 
-	content:":"
-}
-form#register_form input[type='text'], input[type='password'] { 
-	display:inline-block; /* with block na */
-	width:200px;
-	border:1px solid #ccc;
-	margin:0;
-	padding:5px;
-}
-form#register_form select {
-    border: 1px solid #CCCCCC;
-    display: inline-block;
-    margin: 0;
-    padding: 5px 0;
-    width: 68px;
-}
-form#register_form input[name='submit'] { 
-	border:1px solid #3399FF;
-	background:#3399FF;
-	border-radius: 5px;
-	margin:10px;
-	color:#FFF;
-	padding:5px;
-	font-weight:bold
-}
-form#register_form input[name='submit'] { 
-	cursor:pointer;
-}
-p.validate_msg {
-    border: 1px solid #FF0000;
-    font-weight: bold;
-    padding: 10px;
-	display:none;
-	margin-bottom:25px
-}
-span.validate  {
-	color:#F00;
-	padding-left:8px;
-	font-style:italic;
-}
-/*ragistration_div_end */
->>>>>>> d1bd1adccdf1411991a35af87cc556bd6426ba0e

@@ -30,78 +30,7 @@ var gameRunnig = false;
 var game_sound;
 var sound_on = false;
 
-/*just for now, delete later */
-function Start() {
-    game_over = false;
-    if( game_sound == null){
-        game_sound = new sound("music.mp3");
-    }
-    game_sound.stop();
-    muteAudio();
-    game_sound.play();
-    /*changes untill here */
-	board = new Array();
-	score = 0;
-	pac_color = "yellow";
-	var cnt = 100;
-	var food_remain = 50;
-	var pacman_remain = 1;
-	start_time = new Date();
-	for (var i = 0; i < 10; i++) {
-		board[i] = new Array();
-		//put obstacles in (i=3,j=3) and (i=3,j=4) and (i=3,j=5), (i=6,j=1) and (i=6,j=2)
-		for (var j = 0; j < 10; j++) {
-			if (
-				(i == 3 && j == 3) ||
-				(i == 3 && j == 4) ||
-				(i == 3 && j == 5) ||
-				(i == 6 && j == 1) ||
-				(i == 6 && j == 2)
-			) {
-				board[i][j] = 4;
-			} else {
-				var randomNum = Math.random();
-				if (randomNum <= (1.0 * food_remain) / cnt) {
-					food_remain--;
-					board[i][j] = 1;
-				} else if (randomNum < (1.0 * (pacman_remain + food_remain)) / cnt) {
-					shape.i = i;
-					shape.j = j;
-					pacman_remain--;
-					board[i][j] = 2;
-				} else {
-					board[i][j] = 0;
-				}
-				cnt--;
-			}
-		}
-	}
-	while (food_remain > 0) {
-		var emptyCell = findRandomEmptyCell(board);
-		board[emptyCell[0]][emptyCell[1]] = 1;
-		food_remain--;
-	}
-	keysDown = {};
-	addEventListener(
-		"keydown",
-		function(e) {
-			keysDown[e.keyCode] = true;
-		},
-		false
-	);
-	addEventListener(
-		"keyup",
-		function(e) {
-			keysDown[e.keyCode] = false;
-		},
-		false
-    );
-    if( game_over == false){
-        alert('start interval');
-        console.log('STARTING INTERVAL!!!!!');
-        interval = setInterval(UpdatePosition, 100);
-    }
-}
+
 
 function switchDivs(newDiv) {
     var item = localStorage.getItem("current");
@@ -197,7 +126,6 @@ function validateGameTime(element) {
 
 }
 
-
 /*exist-change in app */
 function GetKeyPressed() {
     if (keysDown[KeyboardHelper.up]) {
@@ -280,8 +208,8 @@ function sound(src) {
       this.sound.pause();
       sound_on = false;
     }
-  }
-  function muteAudio() {    
+}
+function muteAudio() {    
     if (sound_on == false) {
         game_sound.play();
         $("#mute_btn").css("background-image","url(unmute.png)");
@@ -290,9 +218,9 @@ function sound(src) {
         game_sound.stop();
         $("#mute_btn").css("background-image","url(mute.png)");
         }
-    }
+}
 
-    function openModal( model_name){
+function openModal( model_name){
         // Get the modal
         var modal = document.getElementById(model_name);
 
@@ -333,7 +261,7 @@ function sound(src) {
                 modal.style.display = "none";
             }
         }
-    }
+}
     
 
 
