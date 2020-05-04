@@ -226,7 +226,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     position: relative;
     width: 40%;
     height:40%;
-    border: 1px solid rgb(201, 192, 192);
+    border: 1px solid black;
     left: 10em;
     bottom: 1em;
   }
@@ -409,11 +409,15 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> cded
   #settingForm label{
     color: white;
     font-family:"Lobster", serif;
     font-size: x-large;
   }
+<<<<<<< HEAD
 =======
  
 body { 
@@ -436,6 +440,8 @@ p {
 	background:#fff;
 }
 >>>>>>> ckjkqe
+=======
+>>>>>>> cded
 
   #settingForm button{
     border:1px solid white;
@@ -458,6 +464,7 @@ p {
     color: white;
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 div#wrap2 {
@@ -518,3 +525,5 @@ span.validate  {
 }
 /*ragistration_div_end */
 >>>>>>> ckjkqe
+=======
+>>>>>>> cded
