@@ -14,7 +14,10 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     height: 100%;
   /*  background-image: url("im2.jpg"); */
     background-color: white;
+<<<<<<< HEAD
     text-align: center;
+=======
+>>>>>>> fd05bf4bab08808230fa9bb91acbc5c14547cd55
   }
 
 
@@ -29,8 +32,9 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     color: white;
     bottom: 5px;
     text-align: center;
+    
   }
-  
+
   body{
     min-height: 100%;
   
@@ -77,6 +81,10 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     position: absolute;
     left: 600px;
     top: 230px;   
+<<<<<<< HEAD
+=======
+    
+>>>>>>> fd05bf4bab08808230fa9bb91acbc5c14547cd55
   }
   #login_btn {
     background-color: rgb(224, 72, 98);
@@ -93,8 +101,13 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     /* margin: 4px 2px; */
     cursor: pointer;
     position: absolute;
+<<<<<<< HEAD
     /* left: 800px; */
     /* top: 230px; */
+=======
+    left: 800px;
+    top: 230px;
+>>>>>>> fd05bf4bab08808230fa9bb91acbc5c14547cd55
   }
 
 
@@ -166,6 +179,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 	text-align: center;
   padding: 20px;
   font-family: "Lobster", serif;
+  font-size: x-large;
   /* text-decoration:cornflowerblue; */
   /* top: 100px; */
   /* position: fixed; */
@@ -371,7 +385,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 
   h2.free_account {
       font-family: "Lobster", serif;
-      color: rgb(224, 72, 98);
+      color: black;
       display: block;
       margin-bottom: 20px;
       position: relative;
@@ -403,7 +417,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   
   form#register_form input[name='submit'] { 
     border:1px solid white;
-    background:rgb(224, 72, 98);
+    background:black;
     font-size: large;
     border-radius: 5px;
     margin:10px;
@@ -427,7 +441,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 
   #settingForm button{
     border:1px solid white;
-    background:rgb(224, 72, 98);
+    background:black;
     font-size: large;
     border-radius: 5px;
     margin:10px;

@@ -19,6 +19,7 @@ var LOST = false;
 var cell=new Array();
 var count_interval =0;
 var user_name = "p"; 
+var loged_in = false;
 
 var no_pill=true;
 var no_time=true;
@@ -44,7 +45,6 @@ $(document).ready(function() {
 });
 
 function Start() {
-
 	game_over = false;
     if( game_sound == null){
         game_sound = new sound("music.mp3");
@@ -52,7 +52,7 @@ function Start() {
     game_sound.stop();
     muteAudio();
 	game_sound.play();
-	
+	loss_sound = new sound("music/Ghost.mp3");
     /*changes untill here */
 
 	var food_remain=50;
@@ -142,7 +142,7 @@ function Start() {
 	);
 	if( game_over == false){
         interval = setInterval(UpdatePosition, 100);
-    }
+	}
 
 }
 
@@ -174,6 +174,9 @@ function Draw() {
 					context.arc(center.x, center.y, 30, 1.65 * Math.PI, 1.35 * Math.PI); // half circle
 					context.lineTo(center.x, center.y);
 					context.fillStyle = pac_color; //color
+					context.lineWidth = 1;
+					context.strokeStyle = '#003300';
+					context.stroke();
 					context.fill();
 					context.beginPath();
 					context.arc(center.x -15, center.y -5, 5, 0, 2 * Math.PI); // circle
@@ -187,6 +190,9 @@ function Draw() {
 					context.arc(center.x, center.y, 30, 0.65 * Math.PI, 0.35 * Math.PI); // half circle
 					context.lineTo(center.x, center.y);
 					context.fillStyle = pac_color; //color
+					context.lineWidth = 1;
+					context.strokeStyle = '#003300';
+					context.stroke();
 					context.fill();
 					context.beginPath();
 					context.arc(center.x -15, center.y -5, 5, 0, 2 * Math.PI); // circle
@@ -200,6 +206,9 @@ function Draw() {
 					context.arc(center.x, center.y, 30, 1.15 * Math.PI, 0.85 * Math.PI); // half circle
 					context.lineTo(center.x, center.y);
 					context.fillStyle = pac_color; //color
+					context.lineWidth = 1;
+					context.strokeStyle = '#003300';
+					context.stroke();
 					context.fill();
 					context.beginPath();
 					context.arc(center.x -5, center.y -15, 5, 0, 2 * Math.PI); // circle
@@ -213,32 +222,45 @@ function Draw() {
 					context.arc(center.x, center.y, 30, 0.15 * Math.PI, 1.85 * Math.PI); // half circle
 					context.lineTo(center.x, center.y);
 					context.fillStyle = pac_color; //color
+					context.lineWidth = 1;
+					context.strokeStyle = '#003300';
+					context.stroke();
 					context.fill();
 					context.beginPath();
 					context.arc(center.x + 5, center.y - 15, 5, 0, 2 * Math.PI); // circle
 					context.fillStyle = "black"; //color
 					context.fill();
+					
 				}
 			} 
 			//food
 			else if (board[i][j] == 1.05) {
 				context.beginPath();
-				context.arc(center.x, center.y, 15, 0, 2 * Math.PI); // circle
+				context.arc(center.x, center.y, 10, 0, 2* Math.PI); // circle
 				context.fillStyle = fiveColor; //color
 				context.fill();
+				context.lineWidth = 1;
+				context.strokeStyle = '#003300';
+				context.stroke();
 				 
 			}
 			else if(board[i][j] == 1.65){
 				context.beginPath();
-				context.arc(center.x, center.y, 15, 0, 2 * Math.PI); // circle
+				context.arc(center.x, center.y, 10, 0, 2 * Math.PI); // circle
 				context.fillStyle = tenColor; //color
 				context.fill();
+				context.lineWidth = 1;
+				context.strokeStyle = '#003300';
+				context.stroke();
 			}
 			else if(board[i][j] == 1.95){
 				context.beginPath();
-				context.arc(center.x, center.y, 15, 0, 2 * Math.PI); // circle
+				context.arc(center.x, center.y, 10, 0, 2 * Math.PI); // circle
 				context.fillStyle = fifteenColor; //color
 				context.fill();
+				context.lineWidth = 1;
+				context.strokeStyle = '#003300';
+				context.stroke();
 			}
 			else if(board[i][j]==1.5){
 				context.drawImage(bonus50_image,center.x-15, center.y-15,40,40);
@@ -331,6 +353,11 @@ function UpdatePosition() {
 
 	if(LOST)
     {
+		if(!muteAudio_on){
+			game_sound.stop();
+			loss_sound.play();
+			game_sound.play();
+		}
 		reset_game();
 	}
 
@@ -382,7 +409,6 @@ function UpdatePosition() {
 
 }
 
-
 // 
 // adi::
 
@@ -424,19 +450,12 @@ function onLoginFunc(){
 		alert("The password is incorrect");
 	}
 	else{
+		loged_in = true;
 		switchDivs('settings');
 	}
 	return false;
 };
 
-function showAlert_ragistration(){
-	$("#alert_ragistration").show(1000);
-}
-
-function showAlert_login(){
-	$("#alert_login").show(1000);
-
-}
 
 //game
 
@@ -539,11 +558,6 @@ function move_monster(){
 			board[monsters[i].i_index][monsters[i].j_index]=5;
 		}
 	}
-}
-
-function start_position(){
-	
-	reset_game();
 }
 
 function move_bonus_50(){
