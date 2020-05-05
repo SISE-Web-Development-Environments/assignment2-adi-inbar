@@ -213,8 +213,8 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   
   /* Middle column */
   .column.middle {
-    width: 20%;
     margin: 0.5em; 
+    padding: 4px;
     background-color: rgb(159, 243, 235);
     /* font-family:Verdana, Geneva, Tahoma, sans-serif ; */
     font-family: "Courier New", Courier, monospace;
@@ -315,7 +315,6 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   text-align: center;
-  left: 30px;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */

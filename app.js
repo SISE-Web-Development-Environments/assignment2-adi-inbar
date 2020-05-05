@@ -306,7 +306,7 @@ function Draw() {
 			}
 			//draw monster
 			else if(board[i][j]==5){
-				context.drawImage(monster_image,center.x-15, center.y-15,60,60);
+				context.drawImage(monster_image,center.x-30, center.y-30,60,60);
 			}
 			//pill
 			else if(board[i][j]==10){
