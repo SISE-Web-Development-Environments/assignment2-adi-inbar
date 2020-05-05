@@ -16,7 +16,8 @@
 	let max_monsters = 4;
 	let min_monsters = 1;
 
-	let food_remain = 90;
+    /*was chainges*/
+	let food_remain = 50;
 	let max_food = 90;
 	let min_food = 50;
 
@@ -31,7 +32,6 @@
 	var sound_on = false;
 	var loss_sound;
 	var muteAudio_on = false;
-
 
 
 	function switchDivs(newDiv) {
@@ -154,7 +154,8 @@
 	    fiveColor = document.getElementById("fiveColorForm").value;
 	    tenColor = document.getElementById("tenColorForm").value;
 	    fifteenColor = document.getElementById("fifteenColorForm").value;
-	    let keysConfirm = document.getElementById("sameKeys");
+		let keysConfirm = document.getElementById("sameKeys");
+		food_remain = document.getElementById("ballNumberForm").value;
 	    context = canvas.getContext("2d");
 		if (KeyBoardValues.up === KeyBoardValues.right ||
 		    KeyBoardValues.up === KeyBoardValues.down ||
@@ -191,7 +192,7 @@
 	    document.getElementById('game_time_id').innerText = game_time;
 	    document.getElementById('lblLives').innerText = curr_lives;
 	    document.getElementById('balls_number_id').innerText = food_remain; 
-	     document.getElementById('num_of_monsters_id').innerText =ghosts_remain;
+	    document.getElementById('num_of_monsters_id').innerText =ghosts_remain;
 	    document.getElementById('left_arrow_id').innerText =KeyBoardValues.left;
 	    document.getElementById('right_arrow_id').innerText =KeyBoardValues.right;
 	    document.getElementById('down_arrow_id').innerText =KeyBoardValues.down;
@@ -232,14 +233,16 @@
 	}
 	function muteAudio() {    
 	    if (sound_on == false) {
-		game_sound.play();
-		$("#mute_btn").css("background-image","url(unmute.png)");
+			game_sound.play();
+			$("#mute_btn").css("background-image","url(unmute.png)");
+			muteAudio_on = false;
 	    }
 	    else {
-		game_sound.stop();
-		$("#mute_btn").css("background-image","url(mute.png)");
+			game_sound.stop();
+			$("#mute_btn").css("background-image","url(mute.png)");
+			muteAudio_on = true;
 		}
-	    muteAudio_on = true;
+	    
 	}
 
 	function openModal( model_name){
