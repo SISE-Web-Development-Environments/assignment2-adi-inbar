@@ -191,7 +191,6 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 	text-align: center;
   padding: 20px;
   font-family: "Lobster", serif;
-  font-size: x-large;
   /* text-decoration:cornflowerblue; */
   /* top: 100px; */
   /* position: fixed; */
@@ -397,7 +396,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 
   h2.free_account {
       font-family: "Lobster", serif;
-      color: black;
+      color: rgb(224, 72, 98);
       display: block;
       margin-bottom: 20px;
       position: relative;
@@ -429,7 +428,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   
   form#register_form input[name='submit'] { 
     border:1px solid white;
-    background:black;
+    background:rgb(224, 72, 98);
     font-size: large;
     border-radius: 5px;
     margin:10px;
@@ -453,7 +452,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 
   #settingForm button{
     border:1px solid white;
-    background:black;
+    background:rgb(224, 72, 98);
     font-size: large;
     border-radius: 5px;
     margin:10px;
