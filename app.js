@@ -32,8 +32,7 @@ moretime_image = new Image();
 moretime_image.src = "images/stopwatch_23f1.png";
 pill_image = new Image();
 pill_image.src = "images/pill_1f48a.png";
-wall = new Image();
-wall.src = "images/wall.PNG"
+
 
 var ROW ;
 var COL ;
@@ -45,8 +44,6 @@ $(document).ready(function() {
 	$("#Main").hide();
 	$("#login_div").hide();
 	$("#ragistration_div").hide();
-	$("#alert_ragistration").hide();
-	$("#alert_login").hide();
 	localStorage.setItem("current", "welcome");
 });
 
@@ -298,7 +295,6 @@ function Draw() {
 
 			//wall
 			else if (board[i][j] == 4) {
-				//context.drawImage(wall,center.x-35, center.y-35 ,60,60);
 				context.beginPath();
 				context.rect(center.x - 30, center.y - 30, 55, 55);
 				context.fillStyle = "pink"; //color
@@ -319,7 +315,7 @@ function Draw() {
 
 			if (game_over) {
 				let img = document.getElementById("gameOver");
-				context.drawImage(img, 30, 50, 500, 350);
+				context.drawImage(img, 200, 200, 500, 350);
 			}
 		}
 	}
@@ -418,8 +414,6 @@ function UpdatePosition() {
 	// GAME OVER
 	// time over 
 	if (time_elapsed >= game_time) {
-		alert('time 0');
-
 		window.clearInterval(interval);
         if (score >= 100) {
 			pac_color = "green";
@@ -435,7 +429,6 @@ function UpdatePosition() {
 	}
 	// ELSE IF- LIVES OVER
 	else if( curr_lives == 0){
-		alert('live 0');
 		window.clearInterval(interval);
 		pac_color = "red";
 		openModal('looser');
