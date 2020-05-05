@@ -18,10 +18,7 @@ var numBalls_25_point ;
 var LOST = false;
 var cell=new Array();
 var count_interval =0;
-<<<<<<< HEAD
-=======
-var user_name ; 
->>>>>>> ckjkqe
+var user_name = "p"; 
 
 var no_pill=true;
 var no_time=true;
@@ -407,10 +404,7 @@ function onSubmitFunc() {
 		usersObj[username] = {password:userPassword};
 		localStorage.setItem("users",JSON.stringify(usersObj));
 		switchDivs("login_div");
-<<<<<<< HEAD
-=======
 		user_name = username;
->>>>>>> ckjkqe
 	}
 	return false;
 }; // jQuery End
