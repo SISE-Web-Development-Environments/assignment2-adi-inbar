@@ -160,6 +160,7 @@ function Draw() {
 	canvas.width = canvas.width; //clean board
 	lblScore.innerText = score;
 	lblTime.innerText = time_elapsed;
+	lblLives.innerText = curr_lives;
 	for (var i = 0; i < 10; i++) {
 		for (var j = 0; j < 10; j++) {
 			var center = new Object();
@@ -365,23 +366,26 @@ function UpdatePosition() {
 	var currentTime = new Date();
 	time_elapsed = (currentTime - start_time) / 1000;
 
-	if (time_elapsed <= 10 && no_time) {
-		cell_for_time = findRandomEmptyCell(board);
-		board[cell_for_time[0]][cell_for_time[1]]=11;
-		no_time = false;
-		game_time = game_time+10;
-	}
-	if(curr_lives==2 && no_pill){
-		cell_for_pill = findRandomEmptyCell(board);
-		board[cell_for_pill[0]][cell_for_pill[1]]=10;
-		no_pill = false;
-		curr_lives++;
-	}
+	// if (time_elapsed <= 10 && no_time) {
+	// 	cell_for_time = findRandomEmptyCell(board);
+	// 	board[cell_for_time[0]][cell_for_time[1]]=11;
+	// 	no_time = false;
+	// 	game_time = game_time+10;
+	// }
+	// if(curr_lives==2 && no_pill){
+	// 	cell_for_pill = findRandomEmptyCell(board);
+	// 	board[cell_for_pill[0]][cell_for_pill[1]]=10;
+	// 	no_pill = false;
+	// 	curr_lives++;
+	// }
 
 	// GAME OVER
+	// time over 
 	if (time_elapsed >= game_time) {
+		alert('time 0');
+
 		window.clearInterval(interval);
-        if (score >= 5) {
+        if (score >= 100) {
 			pac_color = "green";
 			 openModal('winner');
         } else { //you are better 
@@ -391,15 +395,18 @@ function UpdatePosition() {
 		game_over = true;
         Draw();
 		gameOver();	
+		return;
 	}
 	// ELSE IF- LIVES OVER
 	else if( curr_lives == 0){
+		alert('live 0');
 		window.clearInterval(interval);
 		pac_color = "red";
 		openModal('looser');
 		game_over = true;
         Draw();
 		gameOver();
+		return;
 	}
 	else {
         Draw();

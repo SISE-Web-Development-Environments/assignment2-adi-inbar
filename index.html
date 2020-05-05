@@ -57,40 +57,35 @@
 				<a id="about-btn" onclick="openModal('about')" >About</a>
 		</div> 
 
-<<<<<<< HEAD
-		<div id="welcome"  >;		>
-=======
 
 	
-		<div id="welcome" >
->>>>>>> fd05bf4bab08808230fa9bb91acbc5c14547cd55
+		<div id="welcome" align: center;>
 			<p><b style="font-family: Lobster">Welcome</b><p>
-<div id ="buttons" style="text-align: center; display: block; padding: 0px; padding-bottom: 0px; float: none;">
+				<div id = welcome_btn>
 			<button class = "register_btn" id ="register_btn" type="button" onclick="window.location.href='#Header'">Register</button>
 
-			<button  class="btn btn-info btn-lg" id ="login_btn"  type="button"> <a href='#Main'></a>Login</button>
+			<button class = "login_btn" id ="login_btn"  type="button"> <a href='#Main'></a>Login</button>
+			</div>
 		</div>
-		</div>
-		
 
 		 <div id="settings" style="display: none"> 
 			<form class="needs-validation" id="settingForm">
 				<div class="form-row">
 					<div class="form-group col-md-3">
 						<label for="leftArrowForm">Left Arrow</label>
-						<input type="text" class="form-control" id="leftBotton" onkeydown="showBotton(event,'leftBotton')">
+						<input type="text" class="form-control" id="leftBotton" onkeydown="showBotton(event,'leftBotton')" maxlength="1">
 					</div>
 					<div class="form-group col-md-3">
 						<label for="rightArrowForm">Right Arrow</label>
-						<input type="text" class="form-control" id="rightBotton" onkeydown="showBotton(event,'rightBotton')">
+						<input type="text" class="form-control" id="rightBotton"  onkeydown="showBotton(event,'rightBotton')" maxlength="1">
 					</div>
 					<div class="form-group col-md-3">
 						<label for="downArrowForm">Down Arrow</label>
-						<input type="text" class="form-control" id="downBotton" onkeydown="showBotton(event,'downBotton')">
+						<input type="text" class="form-control" id="downBotton" onkeydown="showBotton(event,'downBotton')" maxlength="1">
 					</div>
 					<div class="form-group col-md-3">
 						<label for="upArrowForm">Up Arrow</label>
-						<input type="text" class="form-control" id="upBotton" onkeydown="showBotton(event,'upBotton')">
+						<input type="text" class="form-control" id="upBotton" onkeydown="showBotton(event,'upBotton')" maxlength="1">
 					</div>
 				</div>
 				<div class="form-row">
@@ -186,11 +181,10 @@
 		<br>
 		<div class="column middle" >
 			<!-- update user NAME NAME -->
-	 <span style="font-size: 20px"><strong>Hello, </strong> </span>
+	 <!-- <span style="font-size: 20px"><strong>Hello, </strong> </span> -->
 	 
 		<div class="show_settings" id="userName" style="font-size: 20px; font-weight: bold"></div>
-		<br>
-		<br>
+	
 
 		<span style="font-size: 20px"><strong> Game Arrows </strong> </span>
 		<br>
@@ -233,6 +227,15 @@
 		<br>
 		<br>
 		<span style="font-size: 20px"><strong> Food types </strong> </span>
+		<br>
+		<div id="showSettings5points" style="margin: 0px; display: inline; background-color: white; font-size: 15px; 
+		font-weight: bold;"> </div>
+		<br>
+		<div id="showSettings15points" style="margin: 0px; display: inline; background-color: white; font-size: 15px; 
+		font-weight: bold;"> </div>
+		<br>
+		<div id="showSettings25points" style="margin: 0px; display: inline; background-color: white; font-size: 15px; 
+		font-weight: bold;"> </div>
 		
 	
 	</div> 
@@ -242,25 +245,20 @@
 			<div id="lbUserName" type="text"></div>
 		</div>
 		<br>
-		<br>
 		<div class="lblScore" >
 			<label for="lblLives">LIVES:  </label>
 			<div id="lblLives" type="text"></div>
 		</div>
-		<br>
 		<br>
 		<div class="lblScore" >
 			<label for="lblTime">TIME:  </label>
 			<div id="lblTime" type="text"></div>
 		</div>
 		<br>
-		<br>
 		<div class ="lblScore">
 			<label for="lblScore">SCORE:</label>
 			<div id="lblScore" type="text"></div>
 		</div>
-		<br>
-		<br>
 		<br>
 
 		<section></section>
@@ -288,27 +286,32 @@
 	</div>
 	 <!-- alert winner  -->
 	 <div id = "winner" class="modal" style="display: none">
-		<div class="modal-content" style=" font-size: 40px; font-weight: bold; font-family: Lobster, serif;" >
+		<div class="modal-content" id = "alert_score"
+		 style=" font-size: 40px; font-weight: bold; font-family: Lobster, serif">
 			<span class="close"> &times; </span>
 			<br>
-			<p>Winner!!! </p>
+			<br>
+			<p style="color: blanchedalmond; font-size: 40px;">Winner!!! </p>
 		  </div>
 	  </div>
 	  	 <!-- alert better score  -->
 	  <div id = "low_score" class="modal" style="display: none">
-		<div class="modal-content" style=" font-size: 40px; font-weight: bold; font-family: Lobster, serif;" >
+		<div class="modal-content" id = "alert_score" style=" font-size: 40px; font-weight: bold; font-family: Lobster, serif;">
 			<span class="close"> &times; </span>
 			<br>
-			<p id = "input_score"> </p>
+			<br>
+			<p style="color: blanchedalmond; font-size: 40px;" id = "input_score"> </p>
 
 		  </div>
 	  </div>
 	  <!-- looser -->
 	  <div id = "looser" class="modal" style="display: none">
-		<div class="modal-content" style=" font-size: 40px; font-weight: bold; font-family: Lobster, serif;" >
+		<div class="modal-content" id = "alert_score" style=" font-size: 40px; font-weight: bold; font-family: Lobster, serif;" >
 			<span class="close"> &times; </span>
 			<br>
-			<p>Looser! </p>
+			<br>
+			<p style="color: blanchedalmond; font-size: 40px;">Loser! </p>
+			<p>Sorry Your Time is Over </p>
 		  </div>
 	  </div>
 	  <!-- user chose same keys -->
