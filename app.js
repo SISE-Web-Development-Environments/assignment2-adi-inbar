@@ -322,6 +322,9 @@ function Draw() {
 }
 
 function UpdatePosition() {
+	if(shape.i == undefined || shape.j == undefined){
+		set_packman_start_position();
+	}
 	board[shape.i][shape.j] = 0;
 	var x = GetKeyPressed();
 	count_interval++;
@@ -378,7 +381,7 @@ function UpdatePosition() {
 	}
 	
 
-	if(count_interval % 10 == 0){
+	if(count_interval % 5 == 0){
 		move_monster();
 	}
 	if(count_interval % 20 == 0){
@@ -399,7 +402,7 @@ function UpdatePosition() {
 	var currentTime = new Date();
 	time_elapsed = (currentTime - start_time) / 1000;
 
-	if (time_elapsed > 20 && no_time) {
+	if (time_elapsed > 45 && no_time) {
 		cell_for_time = findRandomEmptyCell(board);
 		board[cell_for_time[0]][cell_for_time[1]]=11;
 		no_time = false;
