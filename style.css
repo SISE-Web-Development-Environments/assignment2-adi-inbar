@@ -153,7 +153,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     height: 70px;
     width:70px;
     right: 2em;
-    background-image : url(mute.png);
+    background-image : url(images/mute.png);
     background-repeat:no-repeat;
   }
   #reset_btn{
@@ -172,7 +172,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 }
 .menu {
   /* background-color: black; */
-  background-image: url("im2.jpg");
+  background-image: url("images/im2.jpg");
   font-family: "Courier New", Courier, monospace;
   overflow: auto;
   text-align: center;
@@ -220,6 +220,11 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     font-family: "Courier New", Courier, monospace;
     font-size: 18px;
   }
+
+  .column.middle.span{
+    padding: 5px;
+  }
+  
   .column_right{
     background-color: rgb(159, 243, 235); 
     font-family: "Courier New", Courier, monospace;
@@ -276,7 +281,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     left: 0;
     bottom: 0;
     width: 100%;
-    background: url(im2.jpg)repeat;
+    background: url(images/im2.jpg)repeat;
     color: black;
     font-family: "Lobster", serif;
     text-align: left;
@@ -327,9 +332,31 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 .modal-content {
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #888;
-  width: 50%;
+  width: 80%;
+}
+h2{
+    font-family: "Lobster", serif;
+    color: rgb(224, 72, 98);
+    display: block;
+    position: relative;
+    align-items: center;
+    text-align: center;
+}
+h3{
+  color: #000;
+  font-weight: bold;
+  font-size:20px;
+  left: auto;
+  position: relative;
+}
+
+h4{
+  color: #000;
+  font-size: 20px;
+  left: 10px;
+  position: relative;
 }
 
 /* The Close Button */
@@ -398,8 +425,8 @@ form {border: 3px solid #f1f1f1; padding: 15px}
       display: block;
       margin-bottom: 20px;
       position: relative;
-    
   }
+
   form#register_form label { 
     display:inline-block; /* with block na */
     width:125px;

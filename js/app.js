@@ -37,19 +37,24 @@ pill_image.src = "images/pill_1f48a.png";
 var ROW ;
 var COL ;
 
-localStorage.setItem("users",JSON.stringify({p:{password:"p"}}));
+
 
 $(document).ready(function() {
 	context = canvas.getContext("2d");
 	$("#Main").hide();
 	$("#login_div").hide();
 	$("#ragistration_div").hide();
+	document.getElementById("setting_btn").disabled = true;
 	localStorage.setItem("current", "welcome");
 });
 
 
 function Start() {
-
+	LOST = false;
+	/*all the row col */
+	ROW = 15;
+	COL = 15;
+	var cnt = 14*14;
 	game_over = false;
     if( game_sound == null){
         game_sound = new sound("music.mp3");
@@ -72,10 +77,7 @@ function Start() {
 
 	start_time = new Date();
 
-	/*all the row col */
-	ROW = 15;
-	COL = 15;
-	var cnt = 14*14;
+	
 
 	/*pacman*/
 	pac_color = "yellow";
@@ -83,10 +85,9 @@ function Start() {
 	shape.direction = 4;
 
 	//food partition
-	numBalls_5_point = Math.floor(food_remain/0.6) ;
-    numBalls_15_point = Math.floor(food_remain/0.3) ;
-    numBalls_25_point = Math.floor(food_remain/0.1) ;
-	
+	numBalls_5_point = Math.floor(numOfBalls/0.6) ;
+    numBalls_15_point = Math.floor(numOfBalls/0.3) ;
+    numBalls_25_point = Math.floor(numOfBalls/0.1) ;
 	
 	for (var i = 0; i < ROW; i++) {
 		board[i] = new Array();
@@ -108,7 +109,7 @@ function Start() {
 			}
 
 			//put monsters on board at the corners
-			else if(monster_index < ghosts_remain && (i==1 && j==1 || i==1 && j==COL-2 || i==ROW-2 && j==1 || i==ROW-2 && j==COL-2)){
+			else if(monster_index < numOfGhosts && (i==1 && j==1 || i==1 && j==COL-2 || i==ROW-2 && j==1 || i==ROW-2 && j==COL-2)){
 				board[i][j]=5;
 				monsters[monster_index]=new Object();
 				monsters[monster_index].i_index=i;
@@ -119,11 +120,11 @@ function Start() {
 			//put food on board and pacman
 			else {
 				var randomNum = Math.random();
-				if (randomNum <= (1.0 * food_remain) / cnt) {
-					food_remain--;
+				if (randomNum <= (1.0 * numOfBalls) / cnt) {
+					numOfBalls--;
 					board[i][j] = randomCandyChoise();
 				} 
-				else if (randomNum < (1.0 * (pacman_remain + food_remain)) / cnt) {
+				else if (randomNum < (1.0 * (pacman_remain + numOfBalls)) / cnt) {
 					shape.i = i;
 					shape.j = j;
 					pacman_remain--;
@@ -137,10 +138,10 @@ function Start() {
 		}
 	}
 	//put food remaining
-	while (food_remain > 0) {
+	while (numOfBalls > 0) {
 		var emptyCell = findRandomEmptyCell(board);
 		board[emptyCell[0]][emptyCell[1]] = randomCandyChoise();
-		food_remain--;
+		numOfBalls--;
 	}
 
 	//create  the bonos item
@@ -167,12 +168,12 @@ function Start() {
 		},
 		false
 	);
+
 	if( game_over == false){
         interval = setInterval(UpdatePosition, 100);
 	}
 
 }
-
 
 function findRandomEmptyCell(board) {
 	var i = Math.floor(Math.random() * (ROW-2) + 1);
@@ -277,7 +278,7 @@ function Draw() {
 			else if(board[i][j] == 1.65){
 				context.beginPath();
 				context.arc(center.x, center.y, 10, 0, 2 * Math.PI); // circle
-				context.fillStyle = tenColor; //color
+				context.fillStyle = fifteenColor; //color
 				context.fill();
 				context.lineWidth = 1;
 				context.strokeStyle = '#003300';
@@ -286,7 +287,7 @@ function Draw() {
 			else if(board[i][j] == 1.95){
 				context.beginPath();
 				context.arc(center.x, center.y, 10, 0, 2 * Math.PI); // circle
-				context.fillStyle = fifteenColor; //color
+				context.fillStyle = twentyColor; //color
 				context.fill();
 				context.lineWidth = 1;
 				context.strokeStyle = '#003300';
@@ -325,8 +326,8 @@ function Draw() {
 }
 
 function UpdatePosition() {
-	if(shape.i == undefined || shape.j == undefined){
-		Start();
+	if( shape.i == undefined || shape.j == undefined){
+		set_packman_start_position();
 	}
 	board[shape.i][shape.j] = 0;
 	var x = GetKeyPressed();
@@ -452,7 +453,6 @@ function UpdatePosition() {
 }
 
 
-
 //game
 
 function creat_cell_for_monsters(){
@@ -499,7 +499,7 @@ function move_monster(){
 	var m_i;
 	var m_j;
 	
-	for(var i=0; i < ghosts_remain ; i++){
+	for(var i=0; i < numOfGhosts ; i++){
 		var up = 1000;
 		var down = 1000;
 		var left = 1000;
@@ -584,7 +584,7 @@ function creat_bonus_shape(){
 }
 
 function reset_game() {
-	for(var i = 0 ; i < ghosts_remain ; i++){
+	for(var i = 0 ; i < numOfGhosts ; i++){
 		board[monsters[i].i_index][monsters[i].j_index]=monsters[i].candy;
 		monsters[i].candy = board[cell[i].i][cell[i].j];
 		monsters[i].i_index = cell[i].i;
@@ -605,50 +605,3 @@ function set_packman_start_position(){
 }
 
 
-
-// 
-// adi::
-
-//<!--for ragistration and login-->
-function onSubmitFunc() {
-
-	var username = $("#cname").val();
-	var userPassword = $("#password").val();
-	var fullName = $("#fname").val();
-	var usersObj = JSON.parse(localStorage.getItem("users"));
-
-	if (userPassword.length < 6 || !(userPassword.match(/\d+/g)) || !(userPassword.match(/[a-z]/i))){
-        alert("Password Length should be 6 characters and should include numbers and letters!")
-	}
-	else if ((fullName.length < 1) || (fullName.match(/\d+/g))){
-        alert("First name length should be larger then 1, without numbers!");
-    }
-	else if(usersObj[username]==undefined){
-		usersObj[username] = {password:userPassword};
-		localStorage.setItem("users",JSON.stringify(usersObj));
-		switchDivs("login_div");
-		user_name = username;
-	}
-	return false;
-}; // jQuery End
-
-
-function onLoginFunc(){
-
-	var loginName = $("#cnameLog").val();
-	var loginPass = $("#passwordLog").val();
-	var users = JSON.parse(localStorage.getItem("users"));
-	if(users[loginName]==undefined){
-		console.log("no user")
-		alert("There is no user with this name");	
-	}
-	else if(users[loginName].password!=loginPass){
-		console.log("no")
-		alert("The password is incorrect");
-	}
-	else{
-		loged_in = true;
-		switchDivs('settings');
-	}
-	return false;
-};
