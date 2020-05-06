@@ -67,6 +67,9 @@ function Start() {
 	var monster_index = 0;
 	no_pill=true;
 	no_time=true;
+
+	LOST = false;
+
 	start_time = new Date();
 
 	/*all the row col */
@@ -323,7 +326,7 @@ function Draw() {
 
 function UpdatePosition() {
 	if(shape.i == undefined || shape.j == undefined){
-		set_packman_start_position();
+		Start();
 	}
 	board[shape.i][shape.j] = 0;
 	var x = GetKeyPressed();
@@ -458,10 +461,13 @@ function creat_cell_for_monsters(){
 	}
 	cell[0].i=1;
 	cell[0].j=1;
+
 	cell[1].i=1;
 	cell[1].j=COL-2;
+
 	cell[2].i=ROW-2;
 	cell[2].j=COL-2;
+	
 	cell[3].i=ROW-2;
 	cell[3].j=1;
 }
