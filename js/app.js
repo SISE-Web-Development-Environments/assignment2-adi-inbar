@@ -23,6 +23,7 @@ var loged_in = false;
 var loss_sound;
 var no_pill=true;
 var no_time=true;
+var eat_the_bonus = false;
 
 monster_image = new Image();
 monster_image.src = "images/pngwing.com.png"; 
@@ -371,6 +372,7 @@ function UpdatePosition() {
 	}
 	else if(board[shape.i][shape.j] == 1.5){
 		score= score + 50;
+		eat_the_bonus = true;
 	}
 	else if(board[shape.i][shape.j] == 5){
 		LOST=true;
@@ -388,7 +390,7 @@ function UpdatePosition() {
 	if(count_interval % 5 == 0){
 		move_monster();
 	}
-	if(count_interval % 20 == 0){
+	if(count_interval % 20 == 0 && !eat_the_bonus){
 		move_bonus_50();
 	}
 
