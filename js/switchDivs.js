@@ -38,7 +38,7 @@
 
 		/*check if the user loged in */
 		if(newDiv == 'settings' && !loged_in){
-			alert("you have to login befor you start playing");
+			alert("you have to login before you start playing");
 			return;
 		}
   
