@@ -17,7 +17,6 @@ form {border: 3px solid #f1f1f1; padding: 15px}
     background-color: white;
   }
 
-
   #welcome{
     margin-left:-150px;
     height: 100%;
@@ -191,7 +190,6 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 	text-align: center;
   padding: 20px;
   font-family: "Lobster", serif;
-  font-size: x-large;
   /* text-decoration:cornflowerblue; */
   /* top: 100px; */
   /* position: fixed; */
@@ -215,8 +213,8 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   
   /* Middle column */
   .column.middle {
-    width: 20%;
     margin: 0.5em; 
+    padding: 4px;
     background-color: rgb(159, 243, 235);
     /* font-family:Verdana, Geneva, Tahoma, sans-serif ; */
     font-family: "Courier New", Courier, monospace;
@@ -317,7 +315,6 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   text-align: center;
-  left: 30px;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
@@ -356,14 +353,14 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   .p_footer{
     padding:2px ;
     color: black;
-    font-size: x-large;
+    font-size: large;
   }
 
   /*inbar from here */
   p { 
     padding:2px ;
     color: black;
-    font-size: x-large;
+    font-size: large;
   }
   #date{
     color: gray;
@@ -397,7 +394,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
 
   h2.free_account {
       font-family: "Lobster", serif;
-      color: black;
+      color: rgb(224, 72, 98);
       display: block;
       margin-bottom: 20px;
       position: relative;
@@ -429,7 +426,7 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   
   form#register_form input[name='submit'] { 
     border:1px solid white;
-    background:black;
+    background:rgb(224, 72, 98);
     font-size: large;
     border-radius: 5px;
     margin:10px;
@@ -441,6 +438,46 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   form#register_form input[name='submit'] { 
     cursor:pointer;
   }
+
+
+  form#login_form label { 
+    display:inline-block; /* with block na */
+    width:125px;
+    font-weight:bold;
+    font-family:"Lobster", serif;
+  }
+  form#login_form label:after { 
+    content:":"
+  }
+  form#login_form input[type='text'], input[type='password'] { 
+    display:inline-block; /* with block na */
+    width:200px;
+    border:1px solid #ccc;
+    margin:0;
+    padding:5px;
+  }
+  form#login_form select {
+      border: 1px solid #CCCCCC;
+      display: inline-block;
+      margin: 0;
+      padding: 5px 0;
+      width: 68px;
+  }
+  
+  form#login_form input[name='submit'] { 
+    border:1px solid white;
+    background:rgb(224, 72, 98);
+    font-size: large;
+    border-radius: 5px;
+    margin:10px;
+    color:#FFF;
+    padding:10px;
+    font-weight:bold;
+    font-family:"Lobster", serif;
+  }
+  form#login_form input[name='submit'] { 
+    cursor:pointer;
+  }
   
   /*ragistration_div_end */
 
@@ -448,12 +485,12 @@ form {border: 3px solid #f1f1f1; padding: 15px}
   #settingForm label{
     color: black;
     font-family:"Lobster", serif;
-    font-size: x-large;
+    font-size: large;
   }
 
   #settingForm button{
     border:1px solid white;
-    background:black;
+    background:rgb(224, 72, 98);
     font-size: large;
     border-radius: 5px;
     margin:10px;

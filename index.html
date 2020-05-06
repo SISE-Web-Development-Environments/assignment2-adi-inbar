@@ -52,7 +52,7 @@
 				<a onclick="switchDivs('welcome')">Welcome</a>
 				<a onclick="switchDivs('login_div')">Login</a>
 				<a onclick="switchDivs('ragistration_div')">Register</a>
-				<a onclick="switchDivs('Main')">Game</a>
+				<!-- <a onclick="switchDivs('Main')">Game</a> -->
 				<a onclick="switchDivs('settings')">Settings</a>
 				<a id="about-btn" onclick="openModal('about')" >About</a>
 		</div> 
@@ -69,40 +69,40 @@
 		</div>
 
 		 <div id="settings" style="display: none"> 
-			<form class="needs-validation" id="settingForm">
+			<form class="choose_settings" id="settingForm">
 				<div class="form-row">
 					<div class="form-group col-md-3">
-						<label for="leftArrowForm">Left Arrow</label>
-						<input type="text" class="form-control" id="leftBotton" onkeydown="showBotton(event,'leftBotton')" maxlength="1">
+						<label for="leftArrow_set">Left Arrow</label>
+						<input type="text" class="form-control" id="leftBotton" onkeydown="showBotton(event,'leftBotton')" maxlength="1" value="ArrowLeft">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="rightArrowForm">Right Arrow</label>
-						<input type="text" class="form-control" id="rightBotton"  onkeydown="showBotton(event,'rightBotton')" maxlength="1">
+						<label for="right_arrow_set">Right Arrow</label>
+						<input type="text" class="form-control" id="rightBotton"  onkeydown="showBotton(event,'rightBotton')" maxlength="1" value="ArrowRight">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="downArrowForm">Down Arrow</label>
-						<input type="text" class="form-control" id="downBotton" onkeydown="showBotton(event,'downBotton')" maxlength="1">
+						<label for="downArrow_set">Down Arrow</label>
+						<input type="text" class="form-control" id="downBotton" onkeydown="showBotton(event,'downBotton')" maxlength="1" value="ArrowDown">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="upArrowForm">Up Arrow</label>
-						<input type="text" class="form-control" id="upBotton" onkeydown="showBotton(event,'upBotton')" maxlength="1">
+						<label for="upArrow_set">Up Arrow</label>
+						<input type="text" class="form-control" id="upBotton" onkeydown="showBotton(event,'upBotton')" maxlength="1" value="ArrowUp">
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-md-3">
-						<label for="ballNumberForm">Number of candies</label>
-						<input type="number" class="form-control" id="ballNumberForm" name="ballNumberForm"
+						<label for="ballNumber_set">Number of balls</label>
+						<input type="number" class="form-control" id="ballNumber_set" name="ballNumbe_set"
 							   onchange="validateNumBalls(this);"
 							   value="50">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="gameTimeForm">Game Time (seconds)</label>
-						<input type="number" class="form-control" id="gameTimeForm" name="gameTimeForm" value="60"
+						<label for="gameTime_set">Game Time (seconds)</label>
+						<input type="number" class="form-control" id="gameTime_set" name="gameTime_set" value="60"
 							   onchange="validateGameTime(this);">
 					</div>
 					<div class="form-group col-md-3">
-						<label for="monstersForm">Number of Monsters</label>
-						<select id="monstersForm" class="form-control" name="monstersForm" required>
+						<label for="monsters_set">Number of Monsters</label>
+						<select id="monsters_set" class="form-control" name="monsters_set" required>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -110,24 +110,24 @@
 						</select>
 					</div>
 					<div class="form-group col-md-1">
-						<label for="fiveColorForm">5 Points</label>
-						<input type="color" class="form-control" id="fiveColorForm" name="fiveColorForm" value="#eff542">
+						<label for="fiveColor_set">5 Points</label>
+						<input type="color" class="form-control" id="fiveColor_set" name="fiveColor_set" value="#8a2be2">
 					</div>
 					<div class="form-group col-md-1">
-						<label for="tenColorForm">15 Points</label>
-						<input type="color" class="form-control" id="tenColorForm" name="tenColorForm" value="#42a4f5">
+						<label for="fifteenColor_set">15 Points</label>
+						<input type="color" class="form-control" id="fifteenColor_set" name="fifteenColor_set" value="#ff7f50">
 	
 					</div>
 					<div class="form-group col-md-1">
-						<label for="fifteenColorForm">25 Points</label>
-						<input type="color" class="form-control" id="fifteenColorForm" name="fifteenColorForm" value="#f542cb">
+						<label for="twentyColor_set">25 Points</label>
+						<input type="color" class="form-control" id="twentyColor_set" name="twentyColor_set" value="#b8860b">
 					</div>
 				</div>
 				<div class="form-row justify-content-center mt-4">
 					<button type="button" id="generate" class="mx-2 switch btn btn-lg btn-outline-primary" onclick="randomSettings()">
 						<span>Set Random </span>
 					</button>
-					<button type="button" id="startGame" class="mx-2 switch btn btn-lg btn-outline-primary" onclick="goToGame()">
+					<button type="button" id="startGame" class="mx-2 switch btn btn-lg btn-outline-primary" onclick="gameStart()">
 						<span>Start play</span>
 					</button>
 				</div>
@@ -165,7 +165,7 @@
 		<div id="login_div">
 			<div id="wrap2">
 			<h2 class="free_account">Login to Your account</h2>
-			<form id="register_form" onsubmit="onLoginFunc();return false;">
+			<form id="login_form" onsubmit="onLoginFunc();return false;">
 				
 				<p class="p_footer"> <label for="name">User Name</label> 
 					<input id="cnameLog" name="name" type="text" required></p> 
@@ -202,6 +202,7 @@
 			<label for="up_arrow_id">To move up press:</label>
 			<div class="show_settings" id="up_arrow_id"></div>
 		</span> 
+		<br>
 		<span class ="label score">
 			<label for="down_arrow_id">To move down press:</label>
 			<div class="show_settings" id="down_arrow_id"></div>
@@ -262,13 +263,13 @@
 		<br>
 
 		<section></section>
-		<button class = "game_btn" id ="reset_btn" type="button" onclick="goToGame()">New Game</button>
+		<button class = "game_btn" id ="reset_btn" type="button" onclick="gameStart()">New Game</button>
 		<button class = "game_btn"  id ="mute_btn" type="button" onclick="muteAudio()"></button>
 
 	</div>
 
 		<div id="game" class = "section"  >
-			<canvas id="canvas" height="600" width="600"></canvas>
+			<canvas id="canvas" height="900" width="900"></canvas>
 		</div>
 			</div> 
 
@@ -317,9 +318,9 @@
 	  <!-- user chose same keys -->
 	  <div id="sameKeys" class="modal" style="display: none">
         <div class="modal-content">
-            <span id ="sameKeysC" class="close" onclick="closeModal(id)">&times;</span>
+            <span id ="sameKeys" class="close" >&times;</span>
             <br>
-            <p>Please choose uniqe keys only </p>
+            <p>Please choose unique keys and colors </p>
         </div>
     </div>
 	
@@ -360,7 +361,7 @@ s			</div>
 			</div>
 		</div>
 		<span>
-			<img id="gameOver" src="pngwing.png" style="display: none; text-align: left;">
+			<img id="gameOver" src="./pngwing.png" style="display: none; text-align: center;">
 		</span>
 
 	</body>

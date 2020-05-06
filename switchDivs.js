@@ -1,22 +1,23 @@
 	// Settings
-	let good_settings = true;
+	let settings_confirm = true;
 
 	/* keys */
 
-	let KeyBoardValues = {left: 'ArrowLeft', up: 'ArrowUp', right: 'ArrowRight', down: 'ArrowDown'};
-	let KeyboardHelper = {left: 37, up: 38, right: 39, down: 40};
+	let KeyBoardCurr = {left: 'ArrowLeft', up: 'ArrowUp', right: 'ArrowRight', down: 'ArrowDown'};
+	let KeyboardSet = {left: 37, up: 38, right: 39, down: 40};
 
 
 	/*change to lolipops */
 	let fiveColor = "#eff542";
-	let tenColor = "#42a4f5";
-	let fifteenColor = "#f542cb";
+	let fifteenColor = "#42a4f5";
+	let twentyColor = "#f542cb";
 
-	let ghosts_remain = 1;
+	let numOfGhosts = 1;
 	let max_monsters = 4;
 	let min_monsters = 1;
 
-	let food_remain = 90;
+    /*was chainges*/
+	let numOfBalls = 50;
 	let max_food = 90;
 	let min_food = 50;
 
@@ -31,7 +32,6 @@
 	var sound_on = false;
 	var loss_sound;
 	var muteAudio_on = false;
-
 
 
 	function switchDivs(newDiv) {
@@ -53,38 +53,55 @@
 		localStorage.setItem("current", newDiv);
 	    }
 	}
-	// =============== Settings ===================
+	// Settings 
 	function randomSettings() {  
-	    KeyboardHelper.down = 40;
-	    KeyboardHelper.right = 39;
-	    KeyboardHelper.up = 38;
-	    KeyboardHelper.left = 37;
+	    KeyBoardCurr.down = 'ArrowDown';
+	    KeyBoardCurr.right = 'ArrowRight';
+	    KeyBoardCurr.up = 'ArrowUp';
+		KeyBoardCurr.left = 'ArrowLeft';
+		
+		KeyboardSet.down = 40;
+	    KeyboardSet.right = 39;
+	    KeyboardSet.up = 38;
+	    KeyboardSet.left = 37;
 
-	    KeyBoardValues.down = 'ArrowDown';
-	    KeyBoardValues.right = 'ArrowRight';
-	    KeyBoardValues.up = 'ArrowUp';
-	    KeyBoardValues.left = 'ArrowLeft';
+	   document.getElementById("leftBotton").value = KeyBoardCurr.left;
+	   document.getElementById("rightBotton").value = KeyBoardCurr.right;
+	   document.getElementById("upBotton").value = KeyBoardCurr.up;
+	   document.getElementById("downBotton").value = KeyBoardCurr.down;
 
-	   document.getElementById("leftBotton").value = KeyBoardValues.left;
-	    document.getElementById("downBotton").value = KeyBoardValues.down;
-	    document.getElementById("rightBotton").value = KeyBoardValues.right;
-	    document.getElementById("upBotton").value = KeyBoardValues.up;
-	    //  food_remain
-	    food_remain = Math.floor(Math.random() * (max_food - min_food + 1)) + min_food;
-	    document.getElementById('ballNumberForm').value = food_remain;
-	    //  Monsters
-	    ghosts_remain = Math.floor(Math.random() * (max_monsters - min_monsters + 1)) + min_monsters;
-	    document.getElementById('monstersForm').value = ghosts_remain;
-	    //  Game Time
-	    game_time = Math.floor(Math.random() * (max_time - min_time + 1)) + min_time;
-	    document.getElementById('gameTimeForm').value = game_time;
-	    //  Colors
-	    document.getElementById("fiveColorForm").value =
-		"#" + ("00000" + ((Math.random() * (1 << 24)) | 0).toString(16)).slice(-6);
-	    document.getElementById("tenColorForm").value =
-		"#" + ("00000" + ((Math.random() * (1 << 24)) | 0).toString(16)).slice(-6);
-	    document.getElementById("fifteenColorForm").value =
-		"#" + ("00000" + ((Math.random() * (1 << 24)) | 0).toString(16)).slice(-6);
+	//  Colors
+	document.getElementById("fiveColor_set").value =
+	"#" + ("00000" + ((Math.random() * (1 << 24)) | 0).toString(16)).slice(-6);
+	document.getElementById("fifteenColor_set").value =
+	"#" + ("00000" + ((Math.random() * (1 << 24)) | 0).toString(16)).slice(-6);
+	document.getElementById("twentyColor_set").value =
+	"#" + ("00000" + ((Math.random() * (1 << 24)) | 0).toString(16)).slice(-6);
+
+	 //  Game Time
+	 game_time = Math.floor(Math.random() * (max_time - min_time + 1)) + min_time;
+	 document.getElementById('gameTime_set').value = game_time;
+
+	    // num  balls 
+	    numOfBalls = Math.floor(Math.random() * (max_food - min_food + 1)) + min_food;
+		document.getElementById('ballNumber_set').value = numOfBalls;
+		
+	    //num  monsters
+	    numOfGhosts = Math.floor(Math.random() * (max_monsters - min_monsters + 1)) + min_monsters;
+	    document.getElementById('monsters_set').value = numOfGhosts;
+	}
+	
+	function validateNumBalls(element) {
+	    if (element.value < min_food) {
+		element.value = min_food;
+		numOfBalls = parseInt(min_food);
+
+	    } else if (element.value > max_food) {
+		element.value = max_food;
+		numOfBalls = parseInt(max_food);
+	    } else {
+		numOfBalls = parseInt(element.value);
+	    }
 	}
 	/*define keys */
 	function showBotton(event , pId) {
@@ -93,35 +110,23 @@
         }
         var x = event.key;
 		if(pId=="rightBotton"){
-		KeyboardHelper.right = event.keyCode;
-		KeyBoardValues.right = x;
+		KeyboardSet.right = event.keyCode;
+		KeyBoardCurr.right = x;
 		}
 		else if(pId=="leftBotton"){
-		KeyboardHelper.left = event.keyCode;
-		KeyBoardValues.left = x;
+		KeyboardSet.left = event.keyCode;
+		KeyBoardCurr.left = x;
 
 		}else if(pId=="upBotton"){
-		KeyboardHelper.up = event.keyCode;
-		KeyBoardValues.up = x;
+		KeyboardSet.up = event.keyCode;
+		KeyBoardCurr.up = x;
 		}else if(pId=="downBotton"){
-		KeyboardHelper.down = event.keyCode;
-		KeyBoardValues.down = x;
+		KeyboardSet.down = event.keyCode;
+		KeyBoardCurr.down = x;
         }
         
 	    /*show in inbox  */
 		document.getElementById(pId).value  = x;
-	}
-	function validateNumBalls(element) {
-	    if (element.value < min_food) {
-		element.value = min_food;
-		food_remain = parseInt(min_food);
-
-	    } else if (element.value > max_food) {
-		element.value = max_food;
-		food_remain = parseInt(max_food);
-	    } else {
-		food_remain = parseInt(element.value);
-	    }
 	}
 
 	function validateGameTime(element) {
@@ -135,83 +140,83 @@
 
 	/*exist-change in app */
 	function GetKeyPressed() {
-	    if (keysDown[KeyboardHelper.up]) {
+	    if (keysDown[KeyboardSet.up]) {
 		return 1;
 	    }
-	    if (keysDown[KeyboardHelper.down]) {
+	    if (keysDown[KeyboardSet.down]) {
 		return 2;
 	    }
-	    if (keysDown[KeyboardHelper.left]) {
+	    if (keysDown[KeyboardSet.left]) {
 		return 3;
 	    }
-	    if (keysDown[KeyboardHelper.right]) {
+	    if (keysDown[KeyboardSet.right]) {
 		return 4;
 	    }
 	}
-	function goToGame() {
+	function gameStart() {
 	    document.getElementById('input_score').innerText = "";
-	    ghosts_remain = parseInt(document.getElementById("monstersForm").value);
-	    fiveColor = document.getElementById("fiveColorForm").value;
-	    tenColor = document.getElementById("tenColorForm").value;
-	    fifteenColor = document.getElementById("fifteenColorForm").value;
-	    let keysConfirm = document.getElementById("sameKeys");
+		numOfGhosts = parseInt(document.getElementById("monsters_set").value);
+		numOfBalls = document.getElementById("ballNumber_set").value;
+	    fiveColor = document.getElementById("fiveColor_set").value;
+	    fifteenColor = document.getElementById("fifteenColor_set").value;
+	    twentyColor = document.getElementById("twentyColor_set").value;
 	    context = canvas.getContext("2d");
-		if (KeyBoardValues.up === KeyBoardValues.right ||
-		    KeyBoardValues.up === KeyBoardValues.down ||
-		    KeyBoardValues.up === KeyBoardValues.left ||
-		    KeyBoardValues.right === KeyBoardValues.left ||
-		    KeyBoardValues.right === KeyBoardValues.down ||
-		    KeyBoardValues.left === KeyBoardValues.down
-		) {
-		    keysConfirm.style.display = "block";
-		    good_settings = false;
+		if (!keyValidation()) {
+			openModal('sameKeys');
+		    settings_confirm = false;
 		} else {
-		    good_settings = true;
+		    settings_confirm = true;
 		}
-	    	if (good_settings) {
+	    	if (settings_confirm) {
 		        gameRunnig = true;
-               fillSettingBoard();
+				fillSettingsOnBoard();
                 Start();
 		        switchDivs('Main');
 	    	}
-	    }
-	function fillSettingBoard() {
+		}
+		function keyValidation(){
+			if(KeyBoardCurr.up === KeyBoardCurr.right ||
+				KeyBoardCurr.up === KeyBoardCurr.down ||
+				KeyBoardCurr.up === KeyBoardCurr.left ||
+				KeyBoardCurr.right === KeyBoardCurr.left ||
+				KeyBoardCurr.right === KeyBoardCurr.down ||
+				KeyBoardCurr.left === KeyBoardCurr.down){
+					return false;
+				}
+				return true;
+		}
+
+	function fillSettingsOnBoard() {
         if( game_over == false){
             window.clearInterval(interval);
         }
-	    //user_name_settings.innerText = sessionStorage.getItem("currentUser");
-        // document.getElementById('userName').innerText =   document.getElementById('name').innerText;
 		curr_lives = MAX_LIVES;
 		document.getElementById('showSettings5points').innerText= "5 points";
-		document.getElementById('showSettings5points').style.color= fiveColorForm.value;
+		document.getElementById('showSettings5points').style.color= fiveColor_set.value;
 		document.getElementById('showSettings15points').innerText= "15 points";
-		document.getElementById('showSettings15points').style.color= tenColorForm.value;
+		document.getElementById('showSettings15points').style.color= fifteenColor_set.value;
 		document.getElementById('showSettings25points').innerText= "25 points";
-		document.getElementById('showSettings25points').style.color= fifteenColorForm.value;
-	    document.getElementById('game_time_id').innerText = game_time;
+		document.getElementById('showSettings25points').style.color= twentyColor_set.value;
+	 
+	    document.getElementById('left_arrow_id').innerText =KeyBoardCurr.left;
+	    document.getElementById('right_arrow_id').innerText =KeyBoardCurr.right;
+	    document.getElementById('down_arrow_id').innerText =KeyBoardCurr.down;
+		document.getElementById('up_arrow_id').innerText =KeyBoardCurr.up;
+
+		document.getElementById('game_time_id').innerText = game_time;
 	    document.getElementById('lblLives').innerText = curr_lives;
-	    document.getElementById('balls_number_id').innerText = food_remain; 
-	     document.getElementById('num_of_monsters_id').innerText =ghosts_remain;
-	    document.getElementById('left_arrow_id').innerText =KeyBoardValues.left;
-	    document.getElementById('right_arrow_id').innerText =KeyBoardValues.right;
-	    document.getElementById('down_arrow_id').innerText =KeyBoardValues.down;
-	    document.getElementById('up_arrow_id').innerText =KeyBoardValues.up;
+	    document.getElementById('balls_number_id').innerText = numOfBalls; 
+	    document.getElementById('num_of_monsters_id').innerText =numOfGhosts;
 
         //inbar add
         if( user_name != null){
             document.getElementById('lbUserName').innerText = user_name;
         }
-
-	    //five_points_id.style.color = fiveColor;
-	    //ten_points_id.style.color = tenColor;
-	    //fifteen_points_id.style.color = fifteenColor;
 	}
 	function gameOver() {
 	    game_sound.stop();
 	    game_over = true;
 	    window.clearInterval(interval);
-	    // interval_counter = 0;
-	    //ghosts.length = 0
 	}
 
 	function sound(src) {
@@ -232,14 +237,16 @@
 	}
 	function muteAudio() {    
 	    if (sound_on == false) {
-		game_sound.play();
-		$("#mute_btn").css("background-image","url(unmute.png)");
+			game_sound.play();
+			$("#mute_btn").css("background-image","url(unmute.png)");
+			muteAudio_on = false;
 	    }
 	    else {
-		game_sound.stop();
-		$("#mute_btn").css("background-image","url(mute.png)");
+			game_sound.stop();
+			$("#mute_btn").css("background-image","url(mute.png)");
+			muteAudio_on = true;
 		}
-	    muteAudio_on = true;
+	    
 	}
 
 	function openModal( model_name){
@@ -261,9 +268,7 @@
 		else{
 		    modal.style.display = "block";
 		}
-	    // Get the <span> element that closes the modal
-		// var span = document.getElementsByClassName("close")[0];
-
+	    
 		$(document).keydown(function (e) {
 		    var code = e.keyCode || e.which;
 		    if (code == 27) modal.style.display = "none";
@@ -273,10 +278,7 @@
 		$('.close').click(function(){
 		    modal.style.display = "none";
 		});
-		// span.onclick = function () {
-		//     modal.style.display = "none";
-		// }
-
+	
 	    // When the user clicks anywhere outside of the modal, close it
 		window.onclick = function (event) {
 		    if (event.target == modal) {
