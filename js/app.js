@@ -57,7 +57,7 @@ function Start() {
 	var cnt = 14*14;
 	game_over = false;
     if( game_sound == null){
-        game_sound = new sound("music.mp3");
+        game_sound = new sound("music/music.mp3");
     }
     game_sound.stop();
     muteAudio();
