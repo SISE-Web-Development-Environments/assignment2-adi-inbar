@@ -84,7 +84,6 @@ function Start() {
     numBalls_15_point = Math.floor(numOfBalls/0.3) ;
     numBalls_25_point = Math.floor(numOfBalls/0.1) ;
 	
-	
 	for (var i = 0; i < ROW; i++) {
 		board[i] = new Array();
 		for (var j = 0; j < COL; j++) {

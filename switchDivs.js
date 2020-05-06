@@ -160,6 +160,7 @@
 	    fiveColor = document.getElementById("fiveColor_set").value;
 	    fifteenColor = document.getElementById("fifteenColor_set").value;
 	    twentyColor = document.getElementById("twentyColor_set").value;
+
 	    context = canvas.getContext("2d");
 		if (!keyValidation()) {
 			openModal('sameKeys');
@@ -207,6 +208,7 @@
 	    document.getElementById('lblLives').innerText = curr_lives;
 	    document.getElementById('balls_number_id').innerText = numOfBalls; 
 	    document.getElementById('num_of_monsters_id').innerText =numOfGhosts;
+
 
         //inbar add
         if( user_name != null){
