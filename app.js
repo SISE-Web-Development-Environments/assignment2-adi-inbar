@@ -44,12 +44,17 @@ $(document).ready(function() {
 	$("#Main").hide();
 	$("#login_div").hide();
 	$("#ragistration_div").hide();
+	document.getElementById("setting_btn").disabled = true;
 	localStorage.setItem("current", "welcome");
 });
 
 
 function Start() {
-
+	LOST = false;
+	/*all the row col */
+	ROW = 15;
+	COL = 15;
+	var cnt = 14*14;
 	game_over = false;
     if( game_sound == null){
         game_sound = new sound("music.mp3");
@@ -69,10 +74,7 @@ function Start() {
 	no_time=true;
 	start_time = new Date();
 
-	/*all the row col */
-	ROW = 15;
-	COL = 15;
-	var cnt = 14*14;
+	
 
 	/*pacman*/
 	pac_color = "yellow";
@@ -459,10 +461,10 @@ function creat_cell_for_monsters(){
 	cell[0].i=1;
 	cell[0].j=1;
 	cell[1].i=1;
-	cell[1].j=COL-2;
-	cell[2].i=ROW-2;
-	cell[2].j=COL-2;
-	cell[3].i=ROW-2;
+	cell[1].j=13;
+	cell[2].i=13;
+	cell[2].j=13;
+	cell[3].i=13;
 	cell[3].j=1;
 }
 
