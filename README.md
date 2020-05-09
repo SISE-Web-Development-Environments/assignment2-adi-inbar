@@ -1,7 +1,7 @@
 # Assignment2
  מגישות:
- 205810286
- 312493927
+Adi Flint 205810286
+ Inbar Zur 312493927
  כתובת האתר: https://sise-web-development-environments.github.io/assignment2-adi-inbar/
  פונקציונליות שהוספנו:
  - צליל בעת אכילת מפלצת
